@@ -82,8 +82,8 @@ const LandingPage = () => {
                                 <Stethoscope className="w-10 h-10 text-cyan-400 drop-shadow-md" />
                             </div>
                             <div>
-                                <h3 className="text-3xl font-extrabold text-white">สำหรับ "หมอมือโปร"</h3>
-                                <p className="text-cyan-400 font-semibold">(The Professional Doctors)</p>
+                                <h3 className="text-3xl font-extrabold text-white">The Professional Doctors</h3>
+                                <p className="text-cyan-400 font-semibold">(สำหรับแพทย์ปฏิบัติการมืออาชีพ)</p>
                             </div>
                         </div>
                         <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 mb-10 shadow-inner">
@@ -119,8 +119,8 @@ const LandingPage = () => {
                                 <Building2 className="w-10 h-10 text-purple-400 drop-shadow-md" />
                             </div>
                             <div>
-                                <h3 className="text-3xl font-extrabold text-white">สำหรับ "คลินิกเงินไว"</h3>
-                                <p className="text-purple-400 font-semibold">(The Busy Clinics)</p>
+                                <h3 className="text-3xl font-extrabold text-white">Hi-Standard Clinic</h3>
+                                <p className="text-purple-400 font-semibold">(สำหรับคลินิกมาตรฐานสูง)</p>
                             </div>
                         </div>
                         <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 mb-10 shadow-inner">
