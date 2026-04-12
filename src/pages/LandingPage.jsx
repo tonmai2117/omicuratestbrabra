@@ -4,7 +4,7 @@ import Button from '../components/ui/Button';
 import { 
     Activity, Users, MessageSquare, Stethoscope, 
     Zap, Building2, CheckCircle2, Cpu, 
-    Star, Lock 
+    Star, Lock, Briefcase 
 } from 'lucide-react';
 
 const LandingPage = () => {
@@ -119,9 +119,60 @@ const LandingPage = () => {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
                         <Users className="w-12 h-12 text-blue-400 mb-6 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                         <h3 className="text-2xl font-bold text-white mb-2">Mobilization<br/><span className="text-base font-semibold text-blue-400 block mt-1">การย้ายฐาน</span></h3>
-                        <p className="text-slate-300 leading-relaxed mt-4">
-                            หมอจำนวนมากเลือกเดินสู่เส้นทาง <strong className="text-blue-400">"แพทย์อิสระ (Freelance)"</strong> หรือรับเวรคลินิกเอกชนและคลินิกความงาม เพื่อแลกกับข้อเสนอและคุณภาพชีวิตที่ดีกว่า
-                        </p>
+                        <div className="mt-6">
+                            <div className="relative w-full h-32 flex items-center justify-between px-5 mb-4 bg-slate-900/40 rounded-2xl border border-slate-700/40 overflow-hidden">
+                                <style dangerouslySetInnerHTML={{__html:`
+                                    @keyframes flow-right {
+                                        0% { left: 0%; transform: scale(0.5) translateY(var(--y-offset)); opacity: 0; }
+                                        15% { opacity: 1; transform: scale(1) translateY(var(--y-offset)); }
+                                        85% { opacity: 1; transform: scale(1) translateY(var(--y-offset)); }
+                                        100% { left: 100%; transform: scale(0.5) translateY(var(--y-offset)); opacity: 0; }
+                                    }
+                                    .particle-flow { animation: flow-right 2s infinite linear; }
+                                `}} />
+                                
+                                {/* Left: Public System */}
+                                <div className="z-10 flex flex-col items-center">
+                                    <div className="bg-slate-800 border-[3px] border-slate-600 rounded-full w-[64px] h-[64px] flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] relative">
+                                        <Building2 className="w-7 h-7 text-slate-400" />
+                                        <div className="absolute inset-0 rounded-full bg-slate-500/10 animate-pulse"></div>
+                                    </div>
+                                    <span className="text-[10px] text-slate-400 mt-2 font-bold tracking-wider">ในระบบรัฐ</span>
+                                </div>
+
+                                {/* Center: Flying Particles container */}
+                                <div className="absolute left-[80px] right-[75px] h-10 top-1/2 -translate-y-[60%]">
+                                    {/* Trail line */}
+                                    <div className="absolute inset-x-0 h-[1px] top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent border-t border-dashed border-blue-500/30"></div>
+                                    
+                                    {[...Array(6)].map((_, i) => {
+                                        const yOffset = i % 2 === 0 ? '4px' : i % 3 === 0 ? '-4px' : '0px';
+                                        return (
+                                            <div 
+                                                key={i}
+                                                className="particle-flow absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-blue-400 drop-shadow-[0_0_6px_rgba(59,130,246,0.8)]"
+                                                style={{
+                                                    '--y-offset': yOffset,
+                                                    animationDelay: `${i * 0.33}s`
+                                                }}
+                                            />
+                                        )
+                                    })}
+                                </div>
+
+                                {/* Right: Private/Freelance */}
+                                <div className="z-10 flex flex-col items-center">
+                                    <div className="bg-slate-800 border-[2px] border-blue-500/60 rounded-full w-[48px] h-[48px] flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                                        <Briefcase className="w-5 h-5 text-blue-400" />
+                                    </div>
+                                    <span className="text-[10px] text-blue-400 mt-2 font-bold tracking-wider">นอกระบบ (อิสระ)</span>
+                                </div>
+                            </div>
+                            
+                            <p className="text-sm text-slate-300 leading-relaxed bg-blue-900/10 p-3.5 rounded-xl border border-blue-500/20">
+                                หมอจำนวนมากเลือกเดินสู่เส้นทาง <strong className="text-blue-400">"แพทย์อิสระ"</strong> เพื่อแลกกับข้อเสนอและคุณภาพชีวิตที่ดีกว่า
+                            </p>
+                        </div>
                     </div>
                     {/* The Paradox */}
                     <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-amber-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
