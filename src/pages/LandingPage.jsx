@@ -201,10 +201,9 @@ const LandingPage = () => {
                         "หมดยุคของการพึ่งพาโชคชะตา<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">ในการหาบุคลากรทางการแพทย์</span>"
                     </h2>
                     
-                    <div className="bg-[#111827]/60 backdrop-blur-md border border-slate-700/70 p-8 md:p-12 rounded-3xl shadow-2xl mb-12">
-
-                        <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
-                            วงการแพทย์ต้องการมาตรฐานใหม่ที่ <span className="text-blue-400">โปร่งใส ตรวจสอบได้ และยุติธรรมกับทั้งสองฝ่าย</span> เข้าร่วมเป็นส่วนหนึ่งของระบบนิเวศอัจฉริยะกับ Clinic & Co ได้แล้ววันนี้
+                    <div className="mb-12">
+                        <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed drop-shadow-md">
+                            วงการแพทย์ต้องการมาตรฐานใหม่ที่ <span className="text-blue-400">โปร่งใส ตรวจสอบได้ และยุติธรรมกับทั้งสองฝ่าย</span> เข้าร่วมเป็นส่วนหนึ่งของระบบนิเวศแบบผู้เชี่ยวชาญกับ Clinic & Co ได้แล้ววันนี้
                         </p>
                     </div>
                     
