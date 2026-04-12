@@ -198,7 +198,7 @@ const LandingPage = () => {
                 
                 <div className="max-w-5xl mx-auto text-center relative z-10">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-10 leading-tight">
-                        "หมดยุคของการพึ่งพาโชคชะตา<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">ในการหาบุคลากรทางการแพทย์</span>"
+                        "หมดยุคของการพึ่งพาโชคชะตา<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">ในการหาคน และหางานด้านการแพทย์</span>"
                     </h2>
                     
                     <div className="mb-12">
