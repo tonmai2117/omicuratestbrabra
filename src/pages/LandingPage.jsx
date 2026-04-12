@@ -38,9 +38,44 @@ const LandingPage = () => {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
                         <Activity className="w-12 h-12 text-red-500 mb-6 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
                         <h3 className="text-2xl font-bold text-white mb-2">The Crisis<br/><span className="text-base font-semibold text-red-400 block mt-1">คลื่นการลาออก</span></h3>
-                        <p className="text-slate-300 leading-relaxed mt-4">
-                            สถิติพบว่าในแต่ละปีมีแพทย์ลาออกจากระบบสาธารณสุขรัฐเฉลี่ยถึง <strong className="text-red-400">ปีละ 450-650 คน</strong> (รวมเกษียณ) โดยเฉพาะกลุ่มแพทย์จบใหม่ (Intern) ที่เผชิญภาระงานหนักกว่า 50-58 ชั่วโมง/สัปดาห์
-                        </p>
+                        <div className="mt-6">
+                            <div className="flex items-center gap-5 mb-5 p-4 bg-slate-900/40 rounded-2xl border border-slate-700/40">
+                                <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
+                                    <svg className="w-full h-full transform -rotate-90 drop-shadow-md" viewBox="0 0 36 36">
+                                        <path
+                                            className="text-slate-700/60"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            fill="none" stroke="currentColor" strokeWidth="4"
+                                            strokeDasharray="100, 100"
+                                        />
+                                        <path
+                                            className="text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.8)]"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            fill="none" stroke="currentColor" strokeWidth="4"
+                                            strokeDasharray="75, 100"
+                                            strokeLinecap="round"
+                                        />
+                                    </svg>
+                                    <div className="absolute flex flex-col items-center justify-center mt-0.5">
+                                        <span className="text-xl font-bold text-white leading-none">650</span>
+                                        <span className="text-[10px] text-slate-400 mt-1">คน/ปี</span>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-2.5">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_5px_rgba(239,68,68,0.8)]"></div>
+                                        <span className="text-xs font-semibold text-slate-200">แพทย์ลาออก/เกษียณ</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-slate-700/60"></div>
+                                        <span className="text-xs text-slate-400">แพทย์ในระบบ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className="text-sm text-slate-300 leading-relaxed">
+                                สถิติแพทย์ลาออกเฉลี่ย <strong className="text-red-400">450-650 คน/ปี</strong> สาเหตุหลักจากกลุ่มแพทย์จบใหม่ (Intern) ที่เผชิญภาระงานหนักกว่า <strong className="text-red-400">58 ชม./สัปดาห์</strong>
+                            </p>
+                        </div>
                     </div>
                     {/* The Shift */}
                     <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-blue-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
