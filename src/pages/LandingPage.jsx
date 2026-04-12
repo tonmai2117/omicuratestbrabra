@@ -202,10 +202,7 @@ const LandingPage = () => {
                     </h2>
                     
                     <div className="bg-[#111827]/60 backdrop-blur-md border border-slate-700/70 p-8 md:p-12 rounded-3xl shadow-2xl mb-12">
-                        <p className="text-xl md:text-2xl text-slate-300 mb-6 font-medium leading-relaxed">
-                            หลังวิกฤตโรคระบาดและภาวะสมองไหลของแพทย์ ระบบการรีวิวแบบเดิมๆ และกลุ่มแชทที่ตรวจสอบไม่ได้ <strong className="text-red-400 drop-shadow-[0_0_8px_rgba(248,113,113,0.3)]">ไม่ตอบโจทย์อีกต่อไป</strong>
-                        </p>
-                        <hr className="my-8 border-slate-700/60" />
+
                         <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
                             วงการแพทย์ต้องการมาตรฐานใหม่ที่ <span className="text-blue-400">โปร่งใส ตรวจสอบได้ และยุติธรรมกับทั้งสองฝ่าย</span> เข้าร่วมเป็นส่วนหนึ่งของระบบนิเวศอัจฉริยะกับ Clinic & Co ได้แล้ววันนี้
                         </p>
