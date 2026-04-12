@@ -20,7 +20,6 @@ const LandingPage = () => {
             {/* SECTION 1: The Crisis */}
             <div className="relative pt-24 pb-20 px-6 lg:px-8 border-b border-slate-800/50 overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <div className="inline-block bg-red-500/20 text-red-400 border border-red-500/30 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-6">THE CRISIS (วิกฤตที่สร้างโอกาส)</div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-8">
                         เมื่อระบบเก่าถึงทางตัน...<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">
