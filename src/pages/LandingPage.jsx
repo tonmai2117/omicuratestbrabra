@@ -39,37 +39,48 @@ const LandingPage = () => {
                         <Activity className="w-12 h-12 text-red-500 mb-6 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
                         <h3 className="text-2xl font-bold text-white mb-2">The Crisis<br/><span className="text-base font-semibold text-red-400 block mt-1">คลื่นการลาออก</span></h3>
                         <div className="mt-6">
-                            <div className="flex items-center gap-5 mb-5 p-4 bg-slate-900/40 rounded-2xl border border-slate-700/40">
-                                <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
-                                    <svg className="w-full h-full transform -rotate-90 drop-shadow-md" viewBox="0 0 36 36">
-                                        <path
-                                            className="text-slate-700/60"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                                            fill="none" stroke="currentColor" strokeWidth="4"
-                                            strokeDasharray="100, 100"
-                                        />
-                                        <path
-                                            className="text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.8)]"
-                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                                            fill="none" stroke="currentColor" strokeWidth="4"
-                                            strokeDasharray="75, 100"
-                                            strokeLinecap="round"
-                                        />
-                                    </svg>
-                                    <div className="absolute flex flex-col items-center justify-center mt-0.5">
-                                        <span className="text-xl font-bold text-white leading-none">650</span>
-                                        <span className="text-[10px] text-slate-400 mt-1">คน/ปี</span>
-                                    </div>
+                            <div className="relative w-full h-44 flex items-center justify-center mb-5 overflow-hidden bg-slate-900/40 rounded-2xl border border-slate-700/40">
+                                <style dangerouslySetInnerHTML={{__html:`
+                                    @keyframes leak-out {
+                                        0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
+                                        100% { transform: translate(var(--tx), var(--ty)) scale(1.2); opacity: 0; }
+                                    }
+                                    .particle { animation: leak-out 2.5s infinite ease-out; }
+                                `}} />
+                                
+                                {/* Central Hub */}
+                                <div className="z-10 bg-slate-800 border-[3px] border-slate-600 rounded-full w-[76px] h-[76px] flex flex-col items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.8)] relative">
+                                    <span className="text-[10px] text-slate-400 font-medium tracking-wider">ระบบรัฐ</span>
+                                    <span className="text-sm font-bold text-white">40k+</span>
+                                    <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-ping opacity-20"></div>
                                 </div>
-                                <div className="flex flex-col gap-2.5">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_5px_rgba(239,68,68,0.8)]"></div>
-                                        <span className="text-xs font-semibold text-slate-200">แพทย์ลาออก/เกษียณ</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2.5 h-2.5 rounded-full bg-slate-700/60"></div>
-                                        <span className="text-xs text-slate-400">แพทย์ในระบบ</span>
-                                    </div>
+
+                                {/* Particles */}
+                                {[...Array(12)].map((_, i) => {
+                                    const angle = (i * 30) * (Math.PI / 180);
+                                    const tx = Math.cos(angle) * 110;
+                                    const ty = Math.sin(angle) * 110;
+                                    return (
+                                        <div 
+                                            key={i}
+                                            className="particle absolute w-2.5 h-2.5 rounded-full bg-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,1)] z-0"
+                                            style={{
+                                                '--tx': `${tx}px`,
+                                                '--ty': `${ty}px`,
+                                                animationDelay: `${(i * 0.2)}s`
+                                            }}
+                                        />
+                                    );
+                                })}
+
+                                {/* Overlay Label */}
+                                <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                                    <span className="text-[10px] text-slate-400">แพทย์ลาออก</span>
+                                </div>
+                                <div className="absolute top-3 right-3 flex items-baseline gap-1 bg-red-950/40 px-2.5 py-1 rounded-lg border border-red-900/30">
+                                    <span className="text-lg font-bold text-red-500">-650</span>
+                                    <span className="text-[10px] text-red-400/80">คน/ปี</span>
                                 </div>
                             </div>
                             <p className="text-sm text-slate-300 leading-relaxed">
