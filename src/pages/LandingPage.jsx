@@ -83,9 +83,35 @@ const LandingPage = () => {
                                     <span className="text-[10px] text-red-400/80">คน/ปี</span>
                                 </div>
                             </div>
-                            <p className="text-sm text-slate-300 leading-relaxed">
-                                สถิติแพทย์ลาออกเฉลี่ย <strong className="text-red-400">450-650 คน/ปี</strong> สาเหตุหลักจากกลุ่มแพทย์จบใหม่ (Intern) ที่เผชิญภาระงานหนักกว่า <strong className="text-red-400">58 ชม./สัปดาห์</strong>
-                            </p>
+                            {/* Critical Workload Bar Graph */}
+                            <div className="mt-4 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
+                                <div className="text-[10px] text-slate-400 mb-3 font-semibold tracking-wider uppercase">เทียบภาระงาน (ชั่วโมง/สัปดาห์)</div>
+                                <div className="space-y-3">
+                                    {/* Standard Worker */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-16 text-right text-[11px] text-slate-400 font-medium">ทั่วไป</div>
+                                        <div className="flex-1 h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                                            <div className="h-full bg-slate-500 rounded-full w-[50%]"></div>
+                                        </div>
+                                        <div className="w-8 text-left text-xs font-bold text-slate-300">40h</div>
+                                    </div>
+                                    {/* Intern Doctor */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-16 text-right text-[11px] text-red-400 font-bold">แพทย์จบใหม่</div>
+                                        <div className="flex-1 h-2.5 bg-slate-800 rounded-full overflow-hidden relative">
+                                            <div className="h-full bg-red-500 rounded-full w-[80%] shadow-[0_0_8px_rgba(239,68,68,0.8)] relative">
+                                                <div className="absolute inset-0 bg-red-400 animate-pulse mix-blend-overlay opacity-50"></div>
+                                            </div>
+                                            {/* Threshold marker */}
+                                            <div className="absolute top-0 bottom-0 left-[50%] w-[1px] bg-slate-400/80 border-r border-dashed border-slate-300/50"></div>
+                                        </div>
+                                        <div className="w-8 text-left text-xs font-bold text-red-500">58h+</div>
+                                    </div>
+                                </div>
+                                <p className="text-[11px] text-slate-300/90 mt-4 leading-relaxed p-2.5 bg-red-950/30 rounded-lg border border-red-900/30">
+                                    <span className="text-red-400 font-bold">Critical:</span> ภาระงานหนักเกินมาตรฐาน เป็นสาเหตุหลักให้แพทย์เกิดภาวะหมดไฟ (Burnout) และลาออก
+                                </p>
+                            </div>
                         </div>
                     </div>
                     {/* The Shift */}
