@@ -37,7 +37,7 @@ const LandingPage = () => {
                     <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-red-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
                         <Activity className="w-12 h-12 text-red-500 mb-6 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
-                        <h3 className="text-2xl font-bold text-white mb-2">The Exodus<br/><span className="text-base font-semibold text-red-400 block mt-1">คลื่นการลาออก</span></h3>
+                        <h3 className="text-2xl font-bold text-white mb-2">The Crisis<br/><span className="text-base font-semibold text-red-400 block mt-1">คลื่นการลาออก</span></h3>
                         <p className="text-slate-300 leading-relaxed mt-4">
                             สถิติพบว่าในแต่ละปีมีแพทย์ลาออกจากระบบสาธารณสุขรัฐเฉลี่ยถึง <strong className="text-red-400">ปีละ 450-650 คน</strong> (รวมเกษียณ) โดยเฉพาะกลุ่มแพทย์จบใหม่ (Intern) ที่เผชิญภาระงานหนักกว่า 50-58 ชั่วโมง/สัปดาห์
                         </p>
@@ -46,7 +46,7 @@ const LandingPage = () => {
                     <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-blue-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
                         <Users className="w-12 h-12 text-blue-400 mb-6 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
-                        <h3 className="text-2xl font-bold text-white mb-2">The Shift<br/><span className="text-base font-semibold text-blue-400 block mt-1">การย้ายฐาน</span></h3>
+                        <h3 className="text-2xl font-bold text-white mb-2">Mobilization<br/><span className="text-base font-semibold text-blue-400 block mt-1">การย้ายฐาน</span></h3>
                         <p className="text-slate-300 leading-relaxed mt-4">
                             หมอจำนวนมากเลือกเดินสู่เส้นทาง <strong className="text-blue-400">"แพทย์อิสระ (Freelance)"</strong> หรือรับเวรคลินิกเอกชนและคลินิกความงาม เพื่อแลกกับข้อเสนอและคุณภาพชีวิตที่ดีกว่า
                         </p>
@@ -55,7 +55,7 @@ const LandingPage = () => {
                     <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-amber-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
                         <MessageSquare className="w-12 h-12 text-amber-400 mb-6 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
-                        <h3 className="text-2xl font-bold text-white mb-2">The Paradox<br/><span className="text-base font-semibold text-amber-400 block mt-1">ความขัดแย้ง</span></h3>
+                        <h3 className="text-2xl font-bold text-white mb-2">The Paradox &amp; Chaos<br/><span className="text-base font-semibold text-amber-400 block mt-1">ความขัดแย้ง</span></h3>
                         <p className="text-slate-300 leading-relaxed mt-4">
                             แม้จะมีหมอฟรีแลนซ์ในตลาดมากขึ้น แต่คลินิกกลับ <strong className="text-amber-400">"หาหมอยากขึ้น"</strong> เพราะระบบการหางานพึ่งพากลุ่ม LINE ที่ยุ่งเหยิง เกิดภาวะ <strong className="text-white font-bold">Information Asymmetry</strong> หมอดีๆ พลาดเวร คลินิกดีๆ ได้หมอไม่ตรงปก
                         </p>
