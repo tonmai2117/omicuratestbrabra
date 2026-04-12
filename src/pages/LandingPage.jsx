@@ -88,13 +88,12 @@ const LandingPage = () => {
                         </div>
                         <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 mb-10 shadow-inner">
                             <p className="text-slate-300 font-medium leading-relaxed">
-                                <span className="text-red-400 font-bold block mb-2 text-lg drop-shadow-sm">⚠️ Pain Point:</span> 
                                 เบื่อไหม? กับการต้องคอยเฝ้าจอ ไถแชทแย่งเวรในกลุ่มไลน์ แถมต้องลุ้นว่าจะโดนคลินิกเบี้ยวค่าตอบแทนหรือไม่
                             </p>
                         </div>
                         
                         <div className="mt-auto">
-                            <h4 className="text-xl font-bold text-white mb-6 bg-cyan-900/30 border border-cyan-800/50 inline-block px-4 py-2 rounded-lg">✨ What you get:</h4>
+
                             <ul className="space-y-6">
                                 <li className="flex items-start gap-4">
                                     <div className="bg-cyan-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-cyan-700/50"><Zap className="w-5 h-5 text-cyan-400" /></div>
@@ -125,13 +124,12 @@ const LandingPage = () => {
                         </div>
                         <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 mb-10 shadow-inner">
                             <p className="text-slate-300 font-medium leading-relaxed">
-                                <span className="text-red-400 font-bold block mb-2 text-lg drop-shadow-sm">⚠️ Pain Point:</span> 
                                 ไม่มีเวลาคัดกรองประวัติหมอ โพสต์หาคนในไลน์แล้วแชทจม หรือเจอปัญหาหมอทิ้งเวรกะทันหัน
                             </p>
                         </div>
                         
                         <div className="mt-auto">
-                            <h4 className="text-xl font-bold text-white mb-6 bg-purple-900/30 border border-purple-800/50 inline-block px-4 py-2 rounded-lg">💎 What you get:</h4>
+
                             <ul className="space-y-6">
                                 <li className="flex items-start gap-4">
                                     <div className="bg-purple-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-purple-700/50"><CheckCircle2 className="w-5 h-5 text-purple-400" /></div>
