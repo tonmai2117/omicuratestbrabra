@@ -99,7 +99,7 @@ const LandingPage = () => {
                                 </li>
                                 <li className="flex items-start gap-4">
                                     <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
-                                    <div><strong className="text-white text-lg">ง่ายดาย:</strong> <span className="text-slate-400 text-lg">ไม่ต้องแชทต่อรอง ระบบค้นหาเวรที่ตรงสเปกและกดรับได้ทันที</span></div>
+                                    <div><strong className="text-white text-lg">ง่ายดาย:</strong> <span className="text-slate-400 text-lg">ไม่ต้องรอแชทจนตาแฉะ หรือแชทต่อรองให้เหนื่อย ระบบค้นหาเวรที่ตรงตามความต้องการ หรือสามารถเลือกสรรเวรที่ตรงตามใจ ผ่านทาง dashboard ได้ทันที</span></div>
                                 </li>
                                 <li className="flex items-start gap-4">
                                     <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
