@@ -224,7 +224,7 @@ const LandingPage = () => {
                             </div>
                             
                             <p className="text-xs text-slate-300 leading-relaxed bg-amber-900/10 p-3 rounded-xl border border-amber-500/20">
-                                กลุ่ม LINE ที่ยุ่งเหยิง ทำให้โพสต์หาหมอ <strong className="text-amber-400">"ถูกดันจนหาย"</strong> เกิดภาวะ <strong className="text-white">Information Asymmetry</strong>
+                                กลุ่ม LINE ที่ยุ่งเหยิง ทำให้โพสต์หาหมอ <strong className="text-amber-400">"ถูกดันจนหายไป"</strong> เกิดภาวะ <strong className="text-white font-bold">Chaos</strong> ฝั่งหาคนก็ยาก หางานก็ไม่ต่างกัน
                             </p>
                         </div>
                     </div>
