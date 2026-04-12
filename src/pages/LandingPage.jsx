@@ -95,7 +95,7 @@ const LandingPage = () => {
                             <ul className="space-y-6">
                                 <li className="flex items-start gap-4">
                                     <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
-                                    <div><strong className="text-white text-lg">มั่นคง:</strong> <span className="text-slate-400 text-lg">การันตีรายได้ จ่ายเงินไวที่สุด (Fastest Payout)</span></div>
+                                    <div><strong className="text-white text-lg">มั่นคง:</strong> <span className="text-slate-400 text-lg">การันตีรายได้ จ่ายเงินผ่านตัวกลาง โปร่งใส ปลอดภัย</span></div>
                                 </li>
                                 <li className="flex items-start gap-4">
                                     <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
