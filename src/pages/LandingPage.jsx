@@ -179,9 +179,45 @@ const LandingPage = () => {
                         <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
                         <MessageSquare className="w-12 h-12 text-amber-400 mb-6 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
                         <h3 className="text-2xl font-bold text-white mb-2">The Paradox &amp; Chaos<br/><span className="text-base font-semibold text-amber-400 block mt-1">ความขัดแย้ง</span></h3>
-                        <p className="text-slate-300 leading-relaxed mt-4">
-                            แม้จะมีหมอฟรีแลนซ์ในตลาดมากขึ้น แต่คลินิกกลับ <strong className="text-amber-400">"หาหมอยากขึ้น"</strong> เพราะระบบการหางานพึ่งพากลุ่ม LINE ที่ยุ่งเหยิง เกิดภาวะ <strong className="text-white font-bold">Information Asymmetry</strong> หมอดีๆ พลาดเวร คลินิกดีๆ ได้หมอไม่ตรงปก
-                        </p>
+                        <div className="mt-6">
+                            <div className="relative w-full h-44 bg-slate-900/60 rounded-2xl border border-slate-700/40 overflow-hidden mb-4 p-3 shadow-inner">
+                                <style dangerouslySetInnerHTML={{__html:`
+                                    @keyframes flood-scroll {
+                                        0% { transform: translateY(140px); }
+                                        20% { transform: translateY(140px); }
+                                        70% { transform: translateY(-250px); }
+                                        100% { transform: translateY(-250px); }
+                                    }
+                                    .chat-flood { animation: flood-scroll 3.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+                                `}} />
+                                
+                                <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-slate-900/90 to-transparent z-20"></div>
+                                <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-slate-900/90 to-transparent z-20"></div>
+
+                                <div className="chat-flood w-full flex flex-col gap-2 relative z-10">
+                                    {/* Urgent Post */}
+                                    <div className="self-end bg-amber-500/20 border border-amber-500/40 text-amber-200 text-xs py-2 px-3 rounded-2xl rounded-tr-sm max-w-[85%] shadow-[0_0_15px_rgba(245,158,11,0.2)] mb-2 mt-4 relative">
+                                        หาหมอเวรด่วน พรุ่งนี้คับ!!
+                                        <div className="absolute -left-2 -top-2 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+                                        <div className="absolute -left-2 -top-2 w-3 h-3 bg-red-500 rounded-full"></div>
+                                    </div>
+                                    
+                                    {/* Spam Messages flooding */}
+                                    {[...Array(12)].map((_, i) => (
+                                        <div key={i} className="self-start flex gap-2 w-full max-w-[90%]">
+                                            <div className="w-5 h-5 rounded-full bg-slate-700/80 shrink-0 border border-slate-600/50"></div>
+                                            <div className="bg-slate-800 border border-slate-700/50 text-slate-400 text-[10px] py-1.5 px-3 rounded-xl rounded-tl-sm w-full shadow-sm">
+                                                {i % 3 === 0 ? 'สนใจรับเวรครับ' : i % 3 === 1 ? 'ขออนุญาตฝากใบประกอบครับ' : 'ว่างรับครับ ทักแชทไปแล้ว'}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            <p className="text-xs text-slate-300 leading-relaxed bg-amber-900/10 p-3 rounded-xl border border-amber-500/20">
+                                กลุ่ม LINE ที่ยุ่งเหยิง ทำให้โพสต์หาหมอ <strong className="text-amber-400">"ถูกดันจนหาย"</strong> เกิดภาวะ <strong className="text-white">Information Asymmetry</strong>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
