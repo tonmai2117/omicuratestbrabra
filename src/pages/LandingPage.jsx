@@ -94,15 +94,15 @@ const LandingPage = () => {
 
                             <ul className="space-y-6">
                                 <li className="flex items-start gap-4">
-                                    <div className="bg-cyan-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-cyan-700/50"><Zap className="w-5 h-5 text-cyan-400" /></div>
+                                    <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
                                     <div><strong className="text-white text-lg">มั่นคง:</strong> <span className="text-slate-400 text-lg">การันตีรายได้ จ่ายเงินไวที่สุด (Fastest Payout)</span></div>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <div className="bg-cyan-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-cyan-700/50"><Zap className="w-5 h-5 text-cyan-400" /></div>
+                                    <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
                                     <div><strong className="text-white text-lg">ง่ายดาย:</strong> <span className="text-slate-400 text-lg">ไม่ต้องแชทต่อรอง ระบบค้นหาเวรที่ตรงสเปกและกดรับได้ทันที</span></div>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <div className="bg-cyan-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-cyan-700/50"><Zap className="w-5 h-5 text-cyan-400" /></div>
+                                    <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
                                     <div><strong className="text-white text-lg">ปลอดภัย:</strong> <span className="text-slate-400 text-lg">เห็น Trust Score และประวัติการจ่ายเงินของคลินิกก่อนตัดสินใจ</span></div>
                                 </li>
                             </ul>
@@ -128,15 +128,15 @@ const LandingPage = () => {
 
                             <ul className="space-y-6">
                                 <li className="flex items-start gap-4">
-                                    <div className="bg-purple-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-purple-700/50"><CheckCircle2 className="w-5 h-5 text-purple-400" /></div>
+                                    <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
                                     <div><strong className="text-white text-lg">คุณภาพ:</strong> <span className="text-slate-400 text-lg">แพทย์ทุกท่านผ่านการ Verified ใบประกอบวิชาชีพและประวัติชัดเจน</span></div>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <div className="bg-purple-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-purple-700/50"><CheckCircle2 className="w-5 h-5 text-purple-400" /></div>
+                                    <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
                                     <div><strong className="text-white text-lg">รวดเร็ว:</strong> <span className="text-slate-400 text-lg">จับคู่แพทย์ที่พร้อมทำงานทันที ไม่ต้องรอลุ้น</span></div>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <div className="bg-purple-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-purple-700/50"><CheckCircle2 className="w-5 h-5 text-purple-400" /></div>
+                                    <div className="bg-green-900/50 p-2 rounded-full shrink-0 mt-0.5 border border-green-700/50"><CheckCircle2 className="w-5 h-5 text-green-400" /></div>
                                     <div><strong className="text-white text-lg">โปร่งใส:</strong> <span className="text-slate-400 text-lg">มีระบบรีวิวจากคลินิกอื่น (Rating System) เลือกสิ่งที่ดีที่สุด</span></div>
                                 </li>
                             </ul>
