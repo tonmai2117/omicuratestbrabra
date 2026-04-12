@@ -1,272 +1,230 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
-import { Stethoscope, Building2, ShieldCheck, AlertCircle, Clock, BarChart3, TrendingUp, Users, MessageCircle, Waves, Target, XCircle, CheckCircle2 } from 'lucide-react';
+import { 
+    Activity, Users, MessageSquare, Stethoscope, 
+    Zap, Building2, CheckCircle2, Cpu, 
+    Star, Lock 
+} from 'lucide-react';
 
 const LandingPage = () => {
-    // State to trigger purely CSS based animations once page loads
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
-        // Small delay to let the page render before starting animations to make it feel organic
         const timer = setTimeout(() => setAnimate(true), 100);
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <div className="bg-white">
-            {/* 1) Pain Points Section */}
-            <div className="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
-                <div className="mx-auto max-w-7xl py-24 sm:py-32">
-                    <div className="text-center">
-                        <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl mb-6">
-                            The Challenge in Healthcare Networking
-                        </h1>
-                        <p className="mt-4 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-                            The current landscape of professional medical collaboration is fragmented. Clinics struggle to verify doctors, and doctors waste time navigating tedious registration processes across multiple platforms.
-                        </p>
-                    </div>
-
-                    <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {/* Pain Point 1 */}
-                        <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-red-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                            <Clock className="w-12 h-12 text-red-500 mb-6" />
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3">Time-Consuming</h3>
-                            <p className="text-gray-600">Manual verification and endless paperwork delay the onboarding process by weeks.</p>
-                        </div>
-                        {/* Pain Point 2 */}
-                        <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                            <AlertCircle className="w-12 h-12 text-amber-500 mb-6" />
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3">Fragmented Data</h3>
-                            <p className="text-gray-600">Medical professional data is scattered, making it hard for clinics to find the right specialists securely.</p>
-                        </div>
-                        {/* Pain Point 3 */}
-                        <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                            <ShieldCheck className="w-12 h-12 text-orange-500 mb-6" />
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3">Security Risks</h3>
-                            <p className="text-gray-600">Unverified networks expose sensitive collaboration channels to potential privacy & compliance issues.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* 1.5) Metaphor Comparison Section */}
-            <div className="py-24 bg-white overflow-hidden relative">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">
-                            Finding Doctors <span className="text-blue-600">Shouldn't Be a Fishing Trip</span>
-                        </h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-6">
-                            Most clinics waste time posting in crowded chat groups, hoping for the right doctor to bite. See how we change the game.
-                        </p>
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row items-stretch gap-12 max-w-6xl mx-auto">
-                        {/* THE OLD WAY */}
-                        <div className="flex-1 bg-gray-50 border border-gray-200 rounded-3xl overflow-hidden group shadow-lg">
-                            <div className="h-64 overflow-hidden relative">
-                                <img src="/ocean_fishing_metaphor.png" alt="Fishing in Ocean Metaphor" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                                <div className="absolute top-4 left-4 bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-md">THE OLD WAY</div>
-                            </div>
-                            <div className="p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">LINE Chat Groups</h3>
-                                <p className="text-gray-700 italic border-l-4 border-red-300 pl-4 py-2 bg-red-50/50 rounded-r-lg mb-6">
-                                    "Like dropping bait into the vast ocean and praying quietly."
-                                </p>
-                                <ul className="space-y-4 text-gray-600">
-                                    <li className="flex items-start gap-3">
-                                        <XCircle className="w-6 h-6 text-red-500 shrink-0" />
-                                        <span>Post blindly into massive chat rooms with no filters</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <XCircle className="w-6 h-6 text-red-500 shrink-0" />
-                                        <span>Messages get buried quickly; wrong matches waste time</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <XCircle className="w-6 h-6 text-red-500 shrink-0" />
-                                        <span>Hard to verify credibility and easy to lose track of info</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        {/* CLINIC&CO */}
-                        <div className="flex-1 bg-gradient-to-br from-gray-900 to-blue-900 rounded-3xl overflow-hidden group shadow-[0_20px_50px_rgba(37,99,235,0.2)] transform lg:scale-105 z-10 text-white">
-                            <div className="h-64 overflow-hidden relative border-b border-gray-700">
-                                <img src="/precision_target_metaphor.png" alt="Target Radar Metaphor" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                                <div className="absolute top-4 left-4 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-lg shadow-blue-500/50">CLINIC&CO</div>
-                            </div>
-                            <div className="p-8">
-                                <h3 className="text-2xl font-bold text-white mb-2">Smart Target Matching</h3>
-                                <p className="text-blue-100 italic border-l-4 border-blue-400 pl-4 py-2 bg-blue-800/30 rounded-r-lg mb-6">
-                                    "Precision targeting. Direct to the right, verified specialist."
-                                </p>
-                                <ul className="space-y-4 text-blue-50">
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-6 h-6 text-green-400 shrink-0" />
-                                        <span>Instantly filter out available, verified specialists</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-6 h-6 text-green-400 shrink-0" />
-                                        <span>Connect systematically in a dedicated Slack Workspace</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-6 h-6 text-green-400 shrink-0" />
-                                        <span>Professional and highly reliable matching success rate</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* 2) Animated Infographics Section (Data) */}
-            <div className="py-24 bg-gray-900 text-white overflow-hidden relative">
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-gray-900 to-gray-900"></div>
-                <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">Empowering Connections with Data</h2>
-                        <p className="text-lg text-gray-400">See how Clinic&Co transforms professional efficiency (Placeholders for real info)</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-10">
-                            {/* Animated Progress Bar 1 */}
-                            <div>
-                                <div className="flex justify-between mb-3 text-lg">
-                                    <span className="font-semibold flex items-center gap-2"><TrendingUp className="w-6 h-6 text-blue-400" /> Onboarding Speed Increased</span>
-                                    <span className="font-bold text-blue-400">85%</span>
-                                </div>
-                                <div className="w-full bg-gray-800 rounded-full h-5 relative overflow-hidden shadow-inner">
-                                    <div 
-                                        className={`bg-gradient-to-r from-blue-600 to-cyan-400 h-5 rounded-full transition-all duration-[1500ms] ease-out shadow-[0_0_15px_rgba(56,189,248,0.5)]`}
-                                        style={{ width: animate ? '85%' : '0%' }}
-                                    ></div>
-                                </div>
-                            </div>
-                            
-                            {/* Animated Progress Bar 2 */}
-                            <div>
-                                <div className="flex justify-between mb-3 text-lg">
-                                    <span className="font-semibold flex items-center gap-2"><Users className="w-6 h-6 text-purple-400" /> Verified Match Rates</span>
-                                    <span className="font-bold text-purple-400">98%</span>
-                                </div>
-                                <div className="w-full bg-gray-800 rounded-full h-5 relative overflow-hidden shadow-inner">
-                                    <div 
-                                        className={`bg-gradient-to-r from-purple-600 to-pink-500 h-5 rounded-full transition-all duration-[1500ms] delay-300 ease-out shadow-[0_0_15px_rgba(216,180,254,0.5)]`}
-                                        style={{ width: animate ? '98%' : '0%' }}
-                                    ></div>
-                                </div>
-                            </div>
-
-                            {/* Animated Progress Bar 3 */}
-                            <div>
-                                <div className="flex justify-between mb-3 text-lg">
-                                    <span className="font-semibold flex items-center gap-2"><BarChart3 className="w-6 h-6 text-green-400" /> Administrative Effort Cut</span>
-                                    <span className="font-bold text-green-400">60%</span>
-                                </div>
-                                <div className="w-full bg-gray-800 rounded-full h-5 relative overflow-hidden shadow-inner">
-                                    <div 
-                                        className={`bg-gradient-to-r from-green-500 to-emerald-400 h-5 rounded-full transition-all duration-[1500ms] delay-500 ease-out shadow-[0_0_15px_rgba(52,211,153,0.5)]`}
-                                        style={{ width: animate ? '60%' : '0%' }}
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Animated Stat Cards */}
-                        <div className="grid grid-cols-2 gap-6">
-                            <div className={`bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 transform transition-all duration-[1000ms] delay-300 shadow-2xl hover:bg-gray-700/80 ${animate ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                                <h4 className="text-5xl font-extrabold text-white mb-2">10k+</h4>
-                                <p className="text-gray-400 font-medium">Verified Doctors</p>
-                            </div>
-                            <div className={`bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 transform transition-all duration-[1000ms] delay-500 shadow-2xl hover:bg-gray-700/80 mt-8 ${animate ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                                <h4 className="text-5xl font-extrabold text-blue-400 mb-2">500+</h4>
-                                <p className="text-gray-400 font-medium">Partner Clinics</p>
-                            </div>
-                            <div className={`bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 transform transition-all duration-[1000ms] delay-700 shadow-2xl hover:bg-gray-700/80 ${animate ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                                <h4 className="text-5xl font-extrabold text-purple-400 mb-2">0</h4>
-                                <p className="text-gray-400 font-medium">Data Breaches</p>
-                            </div>
-                            <div className={`bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 transform transition-all duration-[1000ms] delay-[1100ms] shadow-2xl hover:bg-gray-700/80 mt-8 ${animate ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                                <h4 className="text-5xl font-extrabold text-green-400 mb-2">24/7</h4>
-                                <p className="text-gray-400 font-medium">Live Support</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* 3) Original Feature Section (Verification First) */}
-            <div className="py-24 sm:py-32 bg-gray-50 border-t border-gray-200">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl lg:text-center">
-                        <h2 className="text-base font-semibold leading-7 text-blue-600">Verification First</h2>
-                        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                            Secure Platform for Professionals
-                        </p>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
-                            We ensure every member is verified before granting access to our community.
-                        </p>
-                    </div>
-                    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
-                            <div className="relative pl-16 group">
-                                <dt className="text-base font-semibold leading-7 text-gray-900">
-                                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 group-hover:bg-blue-700 transition-colors">
-                                        <Stethoscope className="h-6 w-6 text-white" aria-hidden="true" />
-                                    </div>
-                                    For Doctors
-                                </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">
-                                    Verify your medical license and specialties to join our network of professionals.
-                                </dd>
-                            </div>
-                            <div className="relative pl-16 group">
-                                <dt className="text-base font-semibold leading-7 text-gray-900">
-                                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 group-hover:bg-blue-700 transition-colors">
-                                        <Building2 className="h-6 w-6 text-white" aria-hidden="true" />
-                                    </div>
-                                    For Clinics
-                                </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">
-                                    Register your facility with operating licenses to connect with doctors.
-                                </dd>
-                            </div>
-                            <div className="relative pl-16 group">
-                                <dt className="text-base font-semibold leading-7 text-gray-900">
-                                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 group-hover:bg-blue-700 transition-colors">
-                                        <ShieldCheck className="h-6 w-6 text-white" aria-hidden="true" />
-                                    </div>
-                                    Secure Verification
-                                </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">
-                                    Manual verification ensures a trusted environment for all participants.
-                                </dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-
-            {/* 4) Hero Section (Moved to Bottom as highly-visible Call to Action) */}
-            <div className="relative isolate px-6 pb-32 pt-20 lg:px-8 bg-blue-50">
-                <div className="mx-auto max-w-2xl text-center">
-                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-8">
-                        Healthcare Registration Simplified
+        <div className="bg-slate-50 font-sans selection:bg-blue-200">
+            {/* SECTION 1: The Crisis */}
+            <div className="relative pt-24 pb-20 px-6 lg:px-8 bg-white border-b border-gray-100 overflow-hidden">
+                <div className="max-w-4xl mx-auto text-center relative z-10">
+                    <div className="inline-block bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-6">THE CRISIS (วิกฤตที่สร้างโอกาส)</div>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-8">
+                        เมื่อระบบเก่าถึงทางตัน...<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">
+                            การหาเวรแพทย์จึงกลายเป็น "การเสี่ยงดวง"
+                        </span>
                     </h1>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Join Clinic&Co today. Seamlessly connect doctors and clinics to our secure Slack workspace for unified collaboration.
+                    <p className="mt-4 text-xl text-gray-600 font-medium">
+                        การหลั่งไหลของแพทย์ออกจากระบบรัฐ สู่ตลาดฟรีแลนซ์ที่ไร้ศูนย์กลางจัดการ
                     </p>
-                    <div className="mt-12 flex items-center justify-center gap-x-6 hover:scale-105 transition-transform duration-300">
-                        <Link to="/register">
-                            <Button variant="primary" className="px-10 py-4 text-xl shadow-xl hover:shadow-2xl">
-                                Get Started Today
+                </div>
+                
+                {/* Data Storytelling Cards */}
+                <div className={`max-w-6xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-[1000ms] ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+                    {/* The Exodus */}
+                    <div className="bg-red-50/70 rounded-3xl p-8 border border-red-100 shadow-sm hover:shadow-xl transition-shadow relative group">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-red-200 rounded-bl-full -z-10 opacity-30 group-hover:scale-110 transition-transform"></div>
+                        <Activity className="w-12 h-12 text-red-500 mb-6 drop-shadow-sm" />
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">The Exodus<br/><span className="text-base font-semibold text-red-500 block mt-1">คลื่นการลาออก</span></h3>
+                        <p className="text-gray-700 leading-relaxed mt-4">
+                            สถิติพบว่าในแต่ละปีมีแพทย์ลาออกจากระบบสาธารณสุขรัฐเฉลี่ยถึง <strong className="text-red-600">ปีละ 450-650 คน</strong> (รวมเกษียณ) โดยเฉพาะกลุ่มแพทย์จบใหม่ (Intern) ที่เผชิญภาระงานหนักกว่า 50-58 ชั่วโมง/สัปดาห์
+                        </p>
+                    </div>
+                    {/* The Shift */}
+                    <div className="bg-blue-50/70 rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-shadow relative group">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-bl-full -z-10 opacity-30 group-hover:scale-110 transition-transform"></div>
+                        <Users className="w-12 h-12 text-blue-500 mb-6 drop-shadow-sm" />
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">The Shift<br/><span className="text-base font-semibold text-blue-500 block mt-1">การย้ายฐาน</span></h3>
+                        <p className="text-gray-700 leading-relaxed mt-4">
+                            หมอจำนวนมากเลือกเดินสู่เส้นทาง <strong className="text-blue-600">"แพทย์อิสระ (Freelance)"</strong> หรือรับเวรคลินิกเอกชนและคลินิกความงาม เพื่อแลกกับข้อเสนอและคุณภาพชีวิตที่ดีกว่า
+                        </p>
+                    </div>
+                    {/* The Paradox */}
+                    <div className="bg-amber-50/70 rounded-3xl p-8 border border-amber-100 shadow-sm hover:shadow-xl transition-shadow relative group">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-200 rounded-bl-full -z-10 opacity-30 group-hover:scale-110 transition-transform"></div>
+                        <MessageSquare className="w-12 h-12 text-amber-500 mb-6 drop-shadow-sm" />
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">The Paradox<br/><span className="text-base font-semibold text-amber-500 block mt-1">ความขัดแย้ง</span></h3>
+                        <p className="text-gray-700 leading-relaxed mt-4">
+                            แม้จะมีหมอฟรีแลนซ์ในตลาดมากขึ้น แต่คลินิกกลับ <strong className="text-amber-600">"หาหมอยากขึ้น"</strong> เพราะระบบการหางานพึ่งพากลุ่ม LINE ที่ยุ่งเหยิง เกิดภาวะ <strong className="font-bold">Information Asymmetry</strong> หมอดีๆ พลาดเวร คลินิกดีๆ ได้หมอไม่ตรงปก
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* SECTION 2: The Target */}
+            <div className="py-24 px-6 lg:px-8 bg-slate-50 relative overflow-hidden">
+                {/* Decorative background blobs */}
+                <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-200/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+                <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
+                    <div className="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-4">THE TARGET</div>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900">แพลตฟอร์มนี้ทำมาเพื่อใคร?</h2>
+                </div>
+                
+                <div className={`max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 relative z-10 transition-all duration-[1000ms] delay-300 ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+                    {/* Card 1: Doctors */}
+                    <div className="flex-[1.1] bg-white rounded-[2rem] p-10 lg:p-12 shadow-2xl border-t-8 border-cyan-500 hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                        <div className="flex items-center gap-5 mb-8">
+                            <div className="bg-cyan-50 p-4 rounded-2xl">
+                                <Stethoscope className="w-10 h-10 text-cyan-600" />
+                            </div>
+                            <div>
+                                <h3 className="text-3xl font-extrabold text-gray-900">สำหรับ "หมอมือโปร"</h3>
+                                <p className="text-cyan-600 font-semibold">(The Professional Doctors)</p>
+                            </div>
+                        </div>
+                        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-10 shadow-inner">
+                            <p className="text-gray-700 font-medium leading-relaxed">
+                                <span className="text-red-500 font-bold block mb-2 text-lg">⚠️ Pain Point:</span> 
+                                เบื่อไหม? กับการต้องคอยเฝ้าจอ ไถแชทแย่งเวรในกลุ่มไลน์ แถมต้องลุ้นว่าจะโดนคลินิกเบี้ยวค่าตอบแทนหรือไม่
+                            </p>
+                        </div>
+                        
+                        <div className="mt-auto">
+                            <h4 className="text-xl font-bold text-gray-900 mb-6 bg-cyan-50 inline-block px-4 py-1 rounded-lg">✨ What you get:</h4>
+                            <ul className="space-y-6">
+                                <li className="flex items-start gap-4">
+                                    <div className="bg-cyan-100 p-2 rounded-full shrink-0 mt-0.5"><Zap className="w-5 h-5 text-cyan-600" /></div>
+                                    <div><strong className="text-gray-900 text-lg">มั่นคง:</strong> <span className="text-gray-700 text-lg">การันตีรายได้ จ่ายเงินไวที่สุด (Fastest Payout)</span></div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="bg-cyan-100 p-2 rounded-full shrink-0 mt-0.5"><Zap className="w-5 h-5 text-cyan-600" /></div>
+                                    <div><strong className="text-gray-900 text-lg">ง่ายดาย:</strong> <span className="text-gray-700 text-lg">ไม่ต้องแชทต่อรอง ระบบค้นหาเวรที่ตรงสเปกและกดรับได้ทันที</span></div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="bg-cyan-100 p-2 rounded-full shrink-0 mt-0.5"><Zap className="w-5 h-5 text-cyan-600" /></div>
+                                    <div><strong className="text-gray-900 text-lg">ปลอดภัย:</strong> <span className="text-gray-700 text-lg">เห็น Trust Score และประวัติการจ่ายเงินของคลินิกก่อนตัดสินใจ</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Card 2: Clinics */}
+                    <div className="flex-1 bg-white rounded-[2rem] p-10 lg:p-12 shadow-2xl border-t-8 border-purple-500 hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+                        <div className="flex items-center gap-5 mb-8">
+                            <div className="bg-purple-50 p-4 rounded-2xl">
+                                <Building2 className="w-10 h-10 text-purple-600" />
+                            </div>
+                            <div>
+                                <h3 className="text-3xl font-extrabold text-gray-900">สำหรับ "คลินิกเงินไว"</h3>
+                                <p className="text-purple-600 font-semibold">(The Busy Clinics)</p>
+                            </div>
+                        </div>
+                        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-10 shadow-inner">
+                            <p className="text-gray-700 font-medium leading-relaxed">
+                                <span className="text-red-500 font-bold block mb-2 text-lg">⚠️ Pain Point:</span> 
+                                ไม่มีเวลาคัดกรองประวัติหมอ โพสต์หาคนในไลน์แล้วแชทจม หรือเจอปัญหาหมอทิ้งเวรกะทันหัน
+                            </p>
+                        </div>
+                        
+                        <div className="mt-auto">
+                            <h4 className="text-xl font-bold text-gray-900 mb-6 bg-purple-50 inline-block px-4 py-1 rounded-lg">💎 What you get:</h4>
+                            <ul className="space-y-6">
+                                <li className="flex items-start gap-4">
+                                    <div className="bg-purple-100 p-2 rounded-full shrink-0 mt-0.5"><CheckCircle2 className="w-5 h-5 text-purple-600" /></div>
+                                    <div><strong className="text-gray-900 text-lg">คุณภาพ:</strong> <span className="text-gray-700 text-lg">แพทย์ทุกท่านผ่านการ Verified ใบประกอบวิชาชีพและประวัติชัดเจน</span></div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="bg-purple-100 p-2 rounded-full shrink-0 mt-0.5"><CheckCircle2 className="w-5 h-5 text-purple-600" /></div>
+                                    <div><strong className="text-gray-900 text-lg">รวดเร็ว:</strong> <span className="text-gray-700 text-lg">จับคู่แพทย์ที่พร้อมทำงานทันที ไม่ต้องรอลุ้น</span></div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="bg-purple-100 p-2 rounded-full shrink-0 mt-0.5"><CheckCircle2 className="w-5 h-5 text-purple-600" /></div>
+                                    <div><strong className="text-gray-900 text-lg">โปร่งใส:</strong> <span className="text-gray-700 text-lg">มีระบบรีวิวจากคลินิกอื่น (Rating System) เลือกสิ่งที่ดีที่สุด</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* SECTION 3: The Core Solution */}
+            <div className="py-24 px-6 lg:px-8 bg-[#0B1120] text-white">
+                <div className="max-w-4xl mx-auto text-center mb-20">
+                    <div className="inline-block bg-blue-500/20 text-blue-400 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-6 border border-blue-500/30">THE CORE SOLUTION</div>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight">Clinic & Co:<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Intelligent Medical Staffing Ecosystem</span></h2>
+                    <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
+                        เปลี่ยนโลกการจัดจ้างที่ <span className="text-white font-medium">"ยุ่งเหยิง"</span> ให้กลายเป็น <span className="text-blue-300 font-medium">"ระบบนิเวศที่ขับเคลื่อนด้วยความเชื่อใจ"</span> (Trust-Based Ecosystem)
+                    </p>
+                </div>
+                
+                <div className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-[1000ms] delay-500 ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+                    {/* Feature 1 */}
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-10 rounded-3xl border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800 transition-all duration-300 group">
+                        <div className="bg-blue-500/10 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                            <Cpu className="w-10 h-10 text-blue-400" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 text-white">AI Verification<br/>& Matching</h3>
+                        <p className="text-gray-400 leading-relaxed text-lg">
+                            ตรวจสอบข้อมูลแพทย์และคลินิกอย่างแม่นยำ พร้อมจับคู่ความต้องการแบบ Real-time <strong className="text-gray-200">ลดเวลาการหาเวรจากหลักชั่วโมงเหลือเพียงไม่กี่คลิก</strong>
+                        </p>
+                    </div>
+                    
+                    {/* Feature 2 */}
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-10 rounded-3xl border border-gray-700/50 hover:border-yellow-500/50 hover:bg-gray-800 transition-all duration-300 group">
+                        <div className="bg-yellow-500/10 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                            <Star className="w-10 h-10 text-yellow-400" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 text-white">Transparent<br/>Review System</h3>
+                        <p className="text-gray-400 leading-relaxed text-lg">
+                            ทลายกำแพง Information Asymmetry ด้วยระบบให้คะแนน (Rating & Trust Score) ทั้งสองฝั่ง <strong className="text-gray-200">ข้อมูลจริง ประวัติจริง รีวิวจริง</strong>
+                        </p>
+                    </div>
+                    
+                    {/* Feature 3 */}
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-10 rounded-3xl border border-gray-700/50 hover:border-green-500/50 hover:bg-gray-800 transition-all duration-300 group">
+                        <div className="bg-green-500/10 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                            <Lock className="w-10 h-10 text-green-400" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 text-white">Secure & Fast<br/>Payment</h3>
+                        <p className="text-gray-400 leading-relaxed text-lg">
+                            จบปัญหาการตุกติกทางการเงิน ด้วยระบบประมาณการทางการเงินเชิงธุรกิจและ<strong className="text-gray-200">ระบบการจ่ายค่าตอบแทนที่ปลอดภัยระดับสากล</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* SECTION 4: Why Now? + CTA */}
+            <div className="py-32 px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <div className="max-w-5xl mx-auto text-center relative z-10">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-10 leading-tight">
+                        "หมดยุคของการพึ่งพาโชคชะตา<br/><span className="text-blue-600">ในการหาบุคลากรทางการแพทย์</span>"
+                    </h2>
+                    
+                    <div className="bg-white/80 backdrop-blur-md border border-gray-200 p-8 md:p-12 rounded-3xl shadow-xl mb-12">
+                        <p className="text-xl md:text-2xl text-gray-700 mb-6 font-medium leading-relaxed">
+                            หลังวิกฤตโรคระบาดและภาวะสมองไหลของแพทย์ ระบบการรีวิวแบบเดิมๆ และกลุ่มแชทที่ตรวจสอบไม่ได้ <strong className="text-red-500">ไม่ตอบโจทย์อีกต่อไป</strong>
+                        </p>
+                        <hr className="my-8 border-gray-200" />
+                        <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-relaxed">
+                            วงการแพทย์ต้องการมาตรฐานใหม่ที่ <span className="text-blue-600">โปร่งใส ตรวจสอบได้ และยุติธรรมกับทั้งสองฝ่าย</span> เข้าร่วมเป็นส่วนหนึ่งของระบบนิเวศอัจฉริยะกับ Clinic & Co ได้แล้ววันนี้
+                        </p>
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+                        <Link to="/register/doctor" className="w-full sm:w-auto">
+                            <Button variant="primary" className="w-full sm:w-auto px-10 py-5 text-xl font-bold bg-cyan-600 hover:bg-cyan-700 shadow-[0_10px_20px_rgba(8,145,178,0.3)] hover:shadow-[0_15px_30px_rgba(8,145,178,0.4)] transition-all flex items-center justify-center gap-3 rounded-2xl hover:-translate-y-1">
+                                <Stethoscope className="w-6 h-6" /> ลงทะเบียนสำหรับแพทย์
+                            </Button>
+                        </Link>
+                        <Link to="/register/clinic" className="w-full sm:w-auto">
+                            <Button variant="primary" className="w-full sm:w-auto px-10 py-5 text-xl font-bold bg-purple-600 hover:bg-purple-700 shadow-[0_10px_20px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_30px_rgba(147,51,234,0.4)] transition-all flex items-center justify-center gap-3 rounded-2xl hover:-translate-y-1">
+                                <Building2 className="w-6 h-6" /> ลงทะเบียนสำหรับคลินิก
                             </Button>
                         </Link>
                     </div>
