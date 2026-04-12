@@ -86,11 +86,9 @@ const LandingPage = () => {
                                 <p className="text-cyan-400 font-semibold">(สำหรับแพทย์ปฏิบัติการมืออาชีพ)</p>
                             </div>
                         </div>
-                        <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 mb-10 shadow-inner">
-                            <p className="text-slate-300 font-medium leading-relaxed">
-                                เบื่อไหม? กับการต้องคอยเฝ้าจอ ไถแชทแย่งเวรในกลุ่มไลน์ แถมต้องลุ้นว่าจะโดนคลินิกเบี้ยวค่าตอบแทนหรือไม่
-                            </p>
-                        </div>
+                        <p className="text-xl text-cyan-200/90 italic font-light leading-relaxed mb-10 drop-shadow-sm">
+                            "เบื่อไหม? กับการต้องคอยเฝ้าจอ ไถแชทแย่งเวรในกลุ่มไลน์ แถมต้องลุ้นว่าจะโดนคลินิกเบี้ยวค่าตอบแทนหรือไม่"
+                        </p>
                         
                         <div className="mt-auto">
 
@@ -122,11 +120,9 @@ const LandingPage = () => {
                                 <p className="text-purple-400 font-semibold">(สำหรับคลินิกมาตรฐานสูง)</p>
                             </div>
                         </div>
-                        <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 mb-10 shadow-inner">
-                            <p className="text-slate-300 font-medium leading-relaxed">
-                                ไม่มีเวลาคัดกรองประวัติหมอ โพสต์หาคนในไลน์แล้วแชทจม หรือเจอปัญหาหมอทิ้งเวรกะทันหัน
-                            </p>
-                        </div>
+                        <p className="text-xl text-purple-200/90 italic font-light leading-relaxed mb-10 drop-shadow-sm">
+                            "ไม่มีเวลาคัดกรองประวัติหมอ โพสต์หาคนในไลน์แล้วแชทจม หรือเจอปัญหาหมอทิ้งเวรกะทันหัน"
+                        </p>
                         
                         <div className="mt-auto">
 
