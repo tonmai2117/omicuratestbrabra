@@ -51,7 +51,7 @@ const LandingPage = () => {
                                 {/* Central Hub */}
                                 <div className="z-10 bg-slate-800 border-[3px] border-slate-600 rounded-full w-[76px] h-[76px] flex flex-col items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.8)] relative">
                                     <span className="text-[10px] text-slate-400 font-medium tracking-wider">ระบบรัฐ</span>
-                                    <span className="text-sm font-bold text-white">40k+</span>
+                                    <span className="text-sm font-bold text-white">24k</span>
                                     <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-ping opacity-20"></div>
                                 </div>
 
