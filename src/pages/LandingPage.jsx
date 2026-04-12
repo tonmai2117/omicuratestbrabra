@@ -151,7 +151,7 @@ const LandingPage = () => {
                     <div className="inline-block bg-blue-500/20 text-blue-400 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-6 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)]">THE CORE SOLUTION</div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight text-white">Clinic & Co:<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Intelligent Medical Staffing Ecosystem</span></h2>
                     <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-light">
-                        เปลี่ยนโลกการจัดจ้างที่ <span className="text-white font-medium">"ยุ่งเหยิง"</span> ให้กลายเป็น <span className="text-blue-300 font-medium">"ระบบนิเวศที่ขับเคลื่อนด้วยความเชื่อใจ"</span> (Trust-Based Ecosystem)
+                        เปลี่ยนโลกการจัดจ้างที่ <span className="text-white font-medium">"ยุ่งเหยิง"</span> ให้กลายเป็น <span className="text-blue-300 font-medium">"ระบบนิเวศที่ขับเคลื่อนด้วย ความโปร่งใส มาตรฐาน และมืออาชีพ"</span> (Trust-Based Ecosystem)
                     </p>
                 </div>
                 
