@@ -184,11 +184,11 @@ const LandingPage = () => {
                                 <style dangerouslySetInnerHTML={{__html:`
                                     @keyframes flood-scroll {
                                         0% { transform: translateY(140px); }
-                                        20% { transform: translateY(140px); }
-                                        70% { transform: translateY(-250px); }
-                                        100% { transform: translateY(-250px); }
+                                        15% { transform: translateY(140px); }
+                                        85% { transform: translateY(-300px); }
+                                        100% { transform: translateY(-300px); }
                                     }
-                                    .chat-flood { animation: flood-scroll 3.5s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+                                    .chat-flood { animation: flood-scroll 6s infinite ease-in-out; }
                                 `}} />
                                 
                                 <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-slate-900/90 to-transparent z-20"></div>
@@ -203,11 +203,20 @@ const LandingPage = () => {
                                     </div>
                                     
                                     {/* Spam Messages flooding */}
-                                    {[...Array(12)].map((_, i) => (
+                                    {[...Array(14)].map((_, i) => (
                                         <div key={i} className="self-start flex gap-2 w-full max-w-[90%]">
-                                            <div className="w-5 h-5 rounded-full bg-slate-700/80 shrink-0 border border-slate-600/50"></div>
-                                            <div className="bg-slate-800 border border-slate-700/50 text-slate-400 text-[10px] py-1.5 px-3 rounded-xl rounded-tl-sm w-full shadow-sm">
-                                                {i % 3 === 0 ? 'สนใจรับเวรครับ' : i % 3 === 1 ? 'ขออนุญาตฝากใบประกอบครับ' : 'ว่างรับครับ ทักแชทไปแล้ว'}
+                                            <div className={`w-5 h-5 rounded-full shrink-0 border border-slate-600/50 ${i % 2 === 1 ? 'bg-indigo-900/80' : 'bg-slate-700/80'}`}></div>
+                                            <div className="bg-slate-800 border border-slate-700/50 text-[10px] py-1.5 px-3 rounded-xl rounded-tl-sm w-full shadow-sm">
+                                                <span className={i % 2 === 1 ? "text-indigo-300" : "text-slate-400"}>
+                                                    {[
+                                                        'สนใจรับเวรครับ', 
+                                                        'ตามหาหมอ GP วันเสาร์ด่วน!', 
+                                                        'ขออนุญาตฝากใบประกอบครับ', 
+                                                        'หาหมอแทนเวรพรุ่งนี้ 10.00-14.00', 
+                                                        'ว่างรับครับ ทักแชทไปแล้ว', 
+                                                        'คลินิกแถวสุขุมวิท ต้องการหมอด่วน!'
+                                                    ][i % 6]}
+                                                </span>
                                             </div>
                                         </div>
                                     ))}
