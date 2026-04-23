@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
-import { 
-    Activity, Users, MessageSquare, Stethoscope, 
-    Zap, Building2, CheckCircle2, Cpu, 
-    Star, Lock, Briefcase 
+import MedicalBrainDrainDashboard from '../components/MedicalBrainDrainDashboard';
+import {
+    Users, MessageSquare, Stethoscope,
+    Zap, Building2, CheckCircle2, Cpu,
+    Star, Lock, Briefcase
 } from 'lucide-react';
 
 const LandingPage = () => {
@@ -18,102 +19,33 @@ const LandingPage = () => {
     return (
         <div className="bg-[#0B1120] text-slate-300 font-sans selection:bg-blue-900 selection:text-white pb-20">
             {/* SECTION 1: The Crisis */}
-            <div className="relative pt-24 pb-20 px-6 lg:px-8 border-b border-slate-800/50 overflow-hidden">
+            <div className="relative pt-24 pb-12 px-6 lg:px-8 overflow-hidden">
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-8">
                         เมื่อระบบเก่าถึงทางตัน...<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">
-                            การหาเวรแพทย์จึงกลายเป็น "การเสี่ยงดวง"
+                            การหาเวรแพทย์จึงกลายเป็น <span className="whitespace-nowrap">"การเสี่ยงดวง"</span>
                         </span>
                     </h1>
-                    <p className="mt-4 text-xl text-slate-400 font-medium">
-                        การหลั่งไหลของแพทย์ออกจากระบบรัฐ สู่ตลาดฟรีแลนซ์ที่มาตรฐานและมืออาชีพ
-                    </p>
+
                 </div>
-                
-                {/* Data Storytelling Cards */}
-                <div className={`max-w-6xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-[1000ms] ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-                    {/* The Exodus */}
-                    <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-red-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
-                        <Activity className="w-12 h-12 text-red-500 mb-6 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
-                        <h3 className="text-2xl font-bold text-white mb-2">The Crisis<br/><span className="text-base font-semibold text-red-400 block mt-1">คลื่นการลาออก</span></h3>
-                        <div className="mt-6">
-                            <div className="relative w-full h-44 flex items-center justify-center mb-5 overflow-hidden bg-slate-900/40 rounded-2xl border border-slate-700/40">
-                                <style dangerouslySetInnerHTML={{__html:`
-                                    @keyframes leak-out {
-                                        0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
-                                        100% { transform: translate(var(--tx), var(--ty)) scale(1.2); opacity: 0; }
-                                    }
-                                    .particle { animation: leak-out 2.5s infinite ease-out; }
-                                `}} />
-                                
-                                {/* Central Hub */}
-                                <div className="z-10 bg-slate-800 border-[3px] border-slate-600 rounded-full w-[76px] h-[76px] flex flex-col items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.8)] relative">
-                                    <span className="text-[10px] text-slate-400 font-medium tracking-wider">ระบบรัฐ</span>
-                                    <span className="text-sm font-bold text-white">24k</span>
-                                    <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-ping opacity-20"></div>
-                                </div>
+            </div>
 
-                                {/* Particles */}
-                                {[...Array(12)].map((_, i) => {
-                                    const angle = (i * 30) * (Math.PI / 180);
-                                    const tx = Math.cos(angle) * 110;
-                                    const ty = Math.sin(angle) * 110;
-                                    return (
-                                        <div 
-                                            key={i}
-                                            className="particle absolute w-2.5 h-2.5 rounded-full bg-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,1)] z-0"
-                                            style={{
-                                                '--tx': `${tx}px`,
-                                                '--ty': `${ty}px`,
-                                                animationDelay: `${(i * 0.2)}s`
-                                            }}
-                                        />
-                                    );
-                                })}
+{/* Medical Brain Drain Dashboard Section */}
+            <div className="py-12 border-t border-b border-slate-800/50 bg-[#060B14]">
+                <MedicalBrainDrainDashboard />
+            </div>
 
-                                {/* Overlay Label */}
-                                <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                                    <span className="text-[10px] text-slate-400">แพทย์ลาออก</span>
-                                </div>
-                                <div className="absolute top-3 right-3 flex items-baseline gap-1 bg-red-950/40 px-2.5 py-1 rounded-lg border border-red-900/30">
-                                    <span className="text-lg font-bold text-red-500">-650</span>
-                                    <span className="text-[10px] text-red-400/80">คน/ปี</span>
-                                </div>
-                            </div>
-                            {/* Critical Workload Bar Graph */}
-                            <div className="mt-4 bg-slate-900/50 p-4 rounded-xl border border-slate-700/50">
-                                <div className="text-[10px] text-slate-400 mb-3 font-semibold tracking-wider uppercase">เทียบภาระงาน (ชั่วโมง/สัปดาห์)</div>
-                                <div className="space-y-3">
-                                    {/* Standard Worker */}
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-16 text-right text-[11px] text-slate-400 font-medium">ทั่วไป</div>
-                                        <div className="flex-1 h-2.5 bg-slate-800 rounded-full overflow-hidden">
-                                            <div className="h-full bg-slate-500 rounded-full w-[50%]"></div>
-                                        </div>
-                                        <div className="w-8 text-left text-xs font-bold text-slate-300">40h</div>
-                                    </div>
-                                    {/* Intern Doctor */}
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-16 text-right text-[11px] text-red-400 font-bold">แพทย์จบใหม่</div>
-                                        <div className="flex-1 h-2.5 bg-slate-800 rounded-full overflow-hidden relative">
-                                            <div className="h-full bg-red-500 rounded-full w-[80%] shadow-[0_0_8px_rgba(239,68,68,0.8)] relative">
-                                                <div className="absolute inset-0 bg-red-400 animate-pulse mix-blend-overlay opacity-50"></div>
-                                            </div>
-                                            {/* Threshold marker */}
-                                            <div className="absolute top-0 bottom-0 left-[50%] w-[1px] bg-slate-400/80 border-r border-dashed border-slate-300/50"></div>
-                                        </div>
-                                        <div className="w-8 text-left text-xs font-bold text-red-500">58h+</div>
-                                    </div>
-                                </div>
-                                <p className="text-[11px] text-slate-300/90 mt-4 leading-relaxed p-2.5 bg-red-950/30 rounded-lg border border-red-900/30">
-                                    <span className="text-red-400 font-bold">Critical:</span> ภาระงานหนักเกินมาตรฐาน เป็นสาเหตุหลักให้แพทย์เกิดภาวะหมดไฟ (Burnout) และลาออก
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        {/* Data Storytelling Cards Section */}
+            <div className="relative pb-24 pt-16 px-6 lg:px-8 border-b border-slate-800/50 overflow-hidden bg-[#0B1120]">
+                <div className={`max-w-4xl mx-auto text-center mb-12 transition-all duration-[1000ms] ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+                    <h2 className="text-2xl md:text-4xl text-blue-400 font-bold leading-tight md:leading-snug drop-shadow-sm">
+                        การหลั่งไหลของแพทย์ออกจากระบบรัฐ <br className="hidden md:block" />
+                        สู่ตลาด<span className="whitespace-nowrap">ฟรีแลนซ์</span>ที่มาตรฐานและมืออาชีพ
+                    </h2>
+                </div>
+{/* Data Storytelling Cards */}
+                <div className={`max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 transition-all duration-[1000ms] ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
                     {/* The Shift */}
                     <div className="bg-slate-800/40 rounded-3xl p-8 border border-slate-700/60 shadow-lg hover:border-blue-500/50 hover:bg-slate-800/60 transition-all relative group overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
@@ -231,14 +163,13 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            {/* SECTION 2: The Target */}
+{/* SECTION 2: The Target */}
             <div className="py-24 px-6 lg:px-8 relative overflow-hidden border-b border-slate-800/50">
                 {/* Decorative background blobs */}
                 <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-900/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
                 <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
-                    <div className="inline-block bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-4">THE TARGET</div>
                     <h2 className="text-4xl md:text-5xl font-bold text-white">แพลตฟอร์มนี้ทำมาเพื่อใคร?</h2>
                 </div>
                 
