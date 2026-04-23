@@ -13,24 +13,41 @@ export default function MedicalBrainDrainDashboard() {
   // เพิ่ม State สำหรับจัดการลูป Animation ของ Waffle Chart
   const [pictoCycle, setPictoCycle] = useState('enter'); // 'enter' | 'leave' | 'reset'
 
+  // Section 1 flow loop: 'enter' -> hold 20s -> 'leave' -> 'reset' -> 'enter' ...
+  const [flowCycle, setFlowCycle] = useState('reset'); // 'enter' | 'leave' | 'reset'
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Loop control for Section 1 flow pipeline
+  useEffect(() => {
+    if (!isOpen) return;
+    let timeout;
+    if (flowCycle === 'enter') {
+      // All boxes animated in — hold for 20 seconds then fade out
+      timeout = setTimeout(() => setFlowCycle('leave'), 20000);
+    } else if (flowCycle === 'leave') {
+      // Fade-out takes ~1s, then reset
+      timeout = setTimeout(() => setFlowCycle('reset'), 1200);
+    } else if (flowCycle === 'reset') {
+      // Brief pause then re-enter
+      timeout = setTimeout(() => setFlowCycle('enter'), 150);
+    }
+    return () => clearTimeout(timeout);
+  }, [flowCycle, isOpen]);
+
+  const flowVisible = flowCycle === 'enter';
 
   // Re-animate Section 1 every time the dropdown opens
   const handleToggle = () => {
     const willOpen = !isOpen;
     if (willOpen) {
-      // Force synchronous render with reset state so browser paints it
       flushSync(() => {
-        setMounted(false);
+        setFlowCycle('reset');
         setPictoCycle('reset');
       });
       setIsOpen(true);
-      // After reset is painted, trigger animations
-      setTimeout(() => {
-        setMounted(true);
-      }, 100);
     } else {
       setIsOpen(false);
     }
@@ -103,7 +120,7 @@ export default function MedicalBrainDrainDashboard() {
               
               {/* Step 1: ผลิตรวม */}
               <div className="z-10 bg-slate-800/80 border-2 border-blue-500/30 rounded-xl p-4 w-full md:w-64 text-center shadow-sm relative group cursor-pointer hover:bg-slate-700 transition-all duration-700 ease-out"
-                   style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '0ms' }}>
+                   style={{ opacity: flowVisible ? 1 : 0, transform: flowVisible ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '0ms' }}>
                 <div className="text-blue-400 text-sm font-semibold mb-1">กำลังการผลิตรวม</div>
                 <div className="text-3xl font-bold text-blue-500">~3,300</div>
                 <div className="text-blue-400/80 text-xs">คน/ปี (รัฐ + เอกชน)</div>
@@ -111,13 +128,13 @@ export default function MedicalBrainDrainDashboard() {
 
               {/* Arrow 1 */}
               <div className="hidden md:flex flex-1 items-center justify-center">
-                <div className={`h-1 bg-blue-500/30 transition-all duration-700 ease-in-out ${mounted ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '400ms' }}></div>
-                <ChevronRight className="text-blue-500/50 -ml-2 transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0, transitionDelay: '800ms' }} />
+                <div className={`h-1 bg-blue-500/30 transition-all duration-700 ease-in-out ${flowVisible ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '400ms' }}></div>
+                <ChevronRight className="text-blue-500/50 -ml-2 transition-opacity duration-300" style={{ opacity: flowVisible ? 1 : 0, transitionDelay: '800ms' }} />
               </div>
 
               {/* Step 2: เข้าระบบ */}
               <div className="z-10 bg-slate-800/80 border-2 border-emerald-500/30 rounded-xl p-4 w-full md:w-64 text-center shadow-sm hover:bg-slate-700 transition-all duration-700 ease-out cursor-pointer"
-                   style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '800ms' }}>
+                   style={{ opacity: flowVisible ? 1 : 0, transform: flowVisible ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '800ms' }}>
                 <div className="text-emerald-400 text-sm font-semibold mb-1">จัดสรรเข้า กสธ.</div>
                 <div className="text-3xl font-bold text-emerald-500">1,850</div>
                 <div className="text-emerald-400/80 text-xs">คน/ปี (เฉลี่ย)</div>
@@ -125,15 +142,15 @@ export default function MedicalBrainDrainDashboard() {
 
               {/* Arrow 2 */}
               <div className="hidden md:flex flex-1 items-center justify-center relative">
-                <div className={`h-1 bg-slate-600/50 transition-all duration-700 ease-in-out ${mounted ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '1300ms' }}></div>
-                <ChevronRight className="text-slate-500 -ml-2 transition-opacity duration-300" style={{ opacity: mounted ? 1 : 0, transitionDelay: '1700ms' }} />
+                <div className={`h-1 bg-slate-600/50 transition-all duration-700 ease-in-out ${flowVisible ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '1300ms' }}></div>
+                <ChevronRight className="text-slate-500 -ml-2 transition-opacity duration-300" style={{ opacity: flowVisible ? 1 : 0, transitionDelay: '1700ms' }} />
               </div>
 
               {/* Step 3: แยกทาง */}
               <div className="z-10 flex flex-col gap-4 w-full md:w-64">
                 <div className="bg-slate-800/80 border-2 border-slate-600/50 rounded-xl p-4 text-center shadow-sm relative overflow-hidden group transition-all duration-700 ease-out"
-                     style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '1700ms' }}>
-                  <div className="absolute inset-0 bg-green-500/10 w-full transform origin-left transition-transform duration-1000" style={{ transform: mounted ? 'scaleX(1)' : 'scaleX(0)', transitionDelay: '2200ms' }}></div>
+                     style={{ opacity: flowVisible ? 1 : 0, transform: flowVisible ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '1700ms' }}>
+                  <div className="absolute inset-0 bg-green-500/10 w-full transform origin-left transition-transform duration-1000" style={{ transform: flowVisible ? 'scaleX(1)' : 'scaleX(0)', transitionDelay: '2200ms' }}></div>
                   <div className="relative z-10">
                     <div className="text-slate-300 text-sm font-semibold mb-1">คงเหลือในระบบสุทธิ</div>
                     <div className="text-2xl font-bold text-slate-100">~1,195 <span className="text-sm font-normal text-slate-400">คน</span></div>
@@ -141,8 +158,8 @@ export default function MedicalBrainDrainDashboard() {
                 </div>
 
                 <div className="bg-slate-800/80 border-2 border-red-500/30 rounded-xl p-4 text-center shadow-sm relative overflow-hidden group hover:border-red-500/50 transition-all duration-700 ease-out"
-                     style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '2000ms' }}>
-                  <div className="absolute inset-0 bg-red-500/10 w-full transform origin-left transition-transform duration-1000" style={{ transform: mounted ? 'scaleX(1)' : 'scaleX(0)', transitionDelay: '2500ms' }}></div>
+                     style={{ opacity: flowVisible ? 1 : 0, transform: flowVisible ? 'translateX(0)' : 'translateX(-30px)', transitionDelay: '2000ms' }}>
+                  <div className="absolute inset-0 bg-red-500/10 w-full transform origin-left transition-transform duration-1000" style={{ transform: flowVisible ? 'scaleX(1)' : 'scaleX(0)', transitionDelay: '2500ms' }}></div>
                   <div className="relative z-10">
                     <div className="text-red-400 text-sm font-semibold mb-1">ออกจากระบบรวม</div>
                     <div className="text-2xl font-bold text-red-500 flex items-center justify-center gap-2">
@@ -157,7 +174,7 @@ export default function MedicalBrainDrainDashboard() {
             </div>
             
             <div className="bg-amber-900/20 border-l-4 border-amber-500 p-4 rounded-r-lg mt-6 transition-all duration-700 ease-out"
-                 style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(10px)', transitionDelay: '2700ms' }}>
+                 style={{ opacity: flowVisible ? 1 : 0, transform: flowVisible ? 'translateY(0)' : 'translateY(10px)', transitionDelay: '2700ms' }}>
               <p className="text-sm text-amber-200 flex items-start gap-2">
                 <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-amber-500" />
                 <span><strong>ข้อสังเกต:</strong> กสธ. รับแพทย์ใหม่ปีละ ~1,850 คน แต่สูญเสียแพทย์ไปถึงปีละ ~655 คน <strong className="text-amber-400">คิดเป็นสัดส่วนราว 1 ใน 3 ของแพทย์ที่รับเข้ามาใหม่</strong></span>
